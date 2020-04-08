@@ -1,0 +1,31 @@
+<div *ngIf="person">
+
+  <h2>{{person.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{person.id}}</div>
+  <div><span>Name: </span>{{person.name}}</div>
+  <div><span>Infected: </span>{{person.is_infected}}</div>
+  <div><span>Infected Date: </span>{{person.infected_date | date: 'shortDate'}}</div>
+  <div><span>Infected By: </span>{{infectPerson === null ? 'No one' : infectPerson.name}}</div>
+  <div>
+    <label>name:
+      <input [(ngModel)]="person.name" placeholder="name"/>
+    </label>
+  </div>
+  <button *ngIf="person.is_infected" (click)="recover()">Recover</button>
+  <button (click)="goBack()">go back</button>
+
+  <form *ngIf="!person.is_infected && !person.is_recovered" [formGroup]="checkoutForm"
+        (ngSubmit)="onInfect(checkoutForm.value)">
+    <div>
+      <label for="infectorId">Choose an infector:</label>
+      <select id="infectorId" name="infectorId" formControlName="infectorId">
+        <option value="" disabled selected>Choose infector</option>
+        <option *ngFor="let infector of infectedPeople" value="{{infector.id}}"> {{infector.name}} </option>
+      </select>
+
+    </div>
+    <button class="button" type="submit">Infect</button>
+  </form>
+
+  <!--  <button *ngIf="!person.is_infected && !person.is_recovered" (click)="goBack()">Infect</button>-->
+</div>

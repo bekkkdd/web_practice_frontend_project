@@ -1,0 +1,15 @@
+<div *ngIf="country">
+
+  <h2>{{country.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{country.id}}</div>
+  <div><span>Infected count: </span>{{country.infected_count}}</div>
+  <div><span>Recovered count: </span>{{country.recovered_count}}</div>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="country.name" placeholder="name"/>
+    </label>
+  </div>
+  <br><a routerLink="people">People</a> <br> <br>
+  <button (click)="goBack()">go back</button>
+</div>
