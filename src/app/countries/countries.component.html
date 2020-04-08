@@ -1,9 +1,18 @@
-<h2>Countries</h2>
-<ul class="people">
-  <li *ngFor="let country of countries">
+<div class="clsdivCountry">
+  <div class="cntcls">
+  <h2>Countries</h2>
+</div>
+<div class="ulcls">
+  <ul class="people">
+    <li *ngFor="let country of countries">
     <a routerLink="/countries/{{country.id}}">
       <span class="badge">{{country.id}}</span> {{country.name}}
     </a>
-  </li>
-</ul>
+    </li>
+  </ul>
+</div>
+<div class="clsOfbtn">
+  <button (click)="goBack()" class="goBackbuttonclass">go back</button>
+  </div>
+</div>
 

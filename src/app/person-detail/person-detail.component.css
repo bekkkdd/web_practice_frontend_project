@@ -1,7 +1,7 @@
 label {
   display: inline-block;
-  width: 3em;
-  margin: .5em 0;
+  width: 180px;
+  margin: 10px 0;
   color: #607D8B;
   font-weight: bold;
 }
@@ -13,18 +13,34 @@ input {
 button {
   margin-top: 20px;
   font-family: Arial;
-  background-color: #eee;
+  background-color: gray;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
+  color: white;
+  transition-duration: 0.6s;
+  
 }
 button:hover {
+  color: #039be5;
   background-color: #cfd8dc;
 }
 button:disabled {
   background-color: #eee;
   color: #ccc;
   cursor: auto;
+}
+.divofdetail * {
+  color: black;
+}
+.divofdetail{
+  text-align: center;
+}
+.stringcls{
+  margin:30px;
+}
+.recover{
+  margin: 20px;
 }

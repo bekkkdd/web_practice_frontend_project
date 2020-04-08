@@ -1,10 +1,17 @@
+
+<div class="mypeoplecls">
 <h2>My People</h2>
-<ul class="people">
+</div>
+<div class="div_cls_people_comp">
+  <ul class="people">
   <li *ngFor="let person of people">
     <a routerLink="/people/{{person.id}}">
       <span class="badge">{{person.id}}</span> {{person.name}}
     </a>
   </li>
 </ul>
-<button (click)="goBack()">go back</button>
+</div>
+<div class="clsOfbtn">
+<button (click)="goBack()" class="goBackbuttonclass">go back</button>
+</div>
 

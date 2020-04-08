@@ -1,9 +1,8 @@
 /* DashboardComponent's private CSS styles */
 [class*='col-'] {
   float: left;
-  padding-right: 20px;
-  padding-bottom: 20px;
-}
+  padding: 10px 20px 10px 20px;
+  }
 [class*='col-']:last-of-type {
   padding-right: 0;
 }
@@ -34,8 +33,9 @@ h4 {
   color: #eee;
   max-height: 120px;
   min-width: 120px;
-  background-color: #3f525c;
+  background-color: #2b923a;
   border-radius: 2px;
+  transition-duration: 0.6s;
 }
 .module:hover {
   background-color: #eee;
