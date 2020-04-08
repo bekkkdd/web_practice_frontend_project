@@ -14,6 +14,8 @@
   <button *ngIf="person.is_infected" (click)="recover()">Recover</button>
   <button (click)="goBack()">go back</button>
 
+  <div>Recovered person cannot be Infected second time!</div>
+
   <form *ngIf="!person.is_infected && !person.is_recovered" [formGroup]="checkoutForm"
         (ngSubmit)="onInfect(checkoutForm.value)">
     <div>
