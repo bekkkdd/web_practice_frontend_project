@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CountryService} from '../country.service';
 import {Country} from '../country';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-countries',
@@ -9,7 +10,7 @@ import {Country} from '../country';
 })
 export class CountriesComponent implements OnInit {
 
-  constructor(private countryService: CountryService) { }
+  constructor(private countryService: CountryService,private location: Location) { }
 
   countries: Country[];
 
@@ -20,6 +21,9 @@ export class CountriesComponent implements OnInit {
   getCountries(): void {
     this.countryService.getCountries()
       .subscribe(countries => this.countries = countries);
+  }
+  goBack(): void{
+    this.location.back();
   }
 
 }

@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ItsCoronaTime"
+    }
+  },
+  "defaultProject": "ItsCoronaTime",
+  "cli": {
+    "analytics": "1d20b6d9-f662-41dd-b4a1-928ebd928b3a"
+  }
 }
