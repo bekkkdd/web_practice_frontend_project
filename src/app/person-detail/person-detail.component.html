@@ -11,7 +11,7 @@
   <div><span>Infected Date: </span>{{person.infected_date | date: 'shortDate'}}</div>
   <div><span>Infected By: </span>{{infectPerson === null ? 'No one' : infectPerson.name}}</div>
 
-  <div class="models">
+  <div class="models" *ngIf="!person.is_died">
     <label>
       Name: <input [(ngModel)]="person.name" placeholder="name"/>
     </label>
