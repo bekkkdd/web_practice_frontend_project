@@ -42,3 +42,23 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+.countcls{
+  text-align: center;
+}
+.countcls *{
+  color: black;
+}
+.gbkcls{
+  margin-top: 20px;
+  font-family: Arial;
+  background-color: gray;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.6s;
+}
+.gbkcls:hover{
+  color: #039be5;
+  background-color: #cfd8dc;
+}
