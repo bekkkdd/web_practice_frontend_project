@@ -1,4 +1,4 @@
-<div *ngIf="country">
+<div *ngIf="country" class="countcls">
 
   <h2>{{country.name | uppercase}} Details</h2>
   <div><span>id: </span>{{country.id}}</div>
@@ -12,5 +12,5 @@
     </label>
   </div>
   <br><a routerLink="people">People</a> <br> <br>
-  <button (click)="goBack()">go back</button>
+  <button (click)="goBack()" class="gbkcls">go back</button>
 </div>
