@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
     PersonDetailComponent,
     DashboardComponent,
     CountriesComponent,
-    CountryDetailComponent
+    CountryDetailComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
