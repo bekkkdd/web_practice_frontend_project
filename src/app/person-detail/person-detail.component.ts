@@ -70,5 +70,13 @@ export class PersonDetailComponent implements OnInit {
     this.person.is_recovered = true;
     this.person.is_infected = false;
   }
+  kill(): void{
+    this.country.infected_count--;
+    this.country.died_count++;
+    // this.country.recovered_count++;
+    this.person.is_recovered = false;
+    this.person.is_infected = true;
+    this.person.is_died = true;
+  }
 
 }

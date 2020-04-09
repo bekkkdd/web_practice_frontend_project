@@ -1,21 +1,32 @@
 <div *ngIf="person" class="divofdetail">
 
+  <h2 *ngIf="person.is_died" style="color: red"> DIED =( </h2>
+  <h2 *ngIf="person.is_recovered" style="color: green"> RECOVERED =) </h2>
+
   <h2>{{person.name | uppercase}} Details</h2>
   <div><span>id: </span>{{person.id}}</div>
   <div><span>Name: </span>{{person.name}}</div>
+  <div><span>Surname: </span>{{person.surname}}</div>
   <div><span>Infected: </span>{{person.is_infected}}</div>
   <div><span>Infected Date: </span>{{person.infected_date | date: 'shortDate'}}</div>
   <div><span>Infected By: </span>{{infectPerson === null ? 'No one' : infectPerson.name}}</div>
-  <div class="modcls">
+
+  <div class="models">
     <label>
       Name: <input [(ngModel)]="person.name" placeholder="name"/>
     </label>
+    <label>
+      Surname: <input [(ngModel)]="person.surname" placeholder="name"/>
+    </label>
   </div>
-  <button *ngIf="person.is_infected" (click)="recover()" class = "recover">Recover</button>
+
   <button (click)="goBack()">go back</button>
 
   <div class="stringcls">Recovered person cannot be Infected second time!</div>
-<div class="recovercls">
+  <div class="stringcls" *ngIf="person.is_died">You cannot operate with died person</div>
+<div class="recovercls" *ngIf="!person.is_died">
+  <button *ngIf="person.is_infected" (click)="recover()" class = "recover">Recover</button>
+  <button *ngIf="person.is_infected" (click)="kill()" class = "kill">Kill</button>
   <form *ngIf="!person.is_infected && !person.is_recovered" [formGroup]="checkoutForm"
         (ngSubmit)="onInfect(checkoutForm.value)">
     <div>
