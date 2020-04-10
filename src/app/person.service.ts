@@ -18,7 +18,7 @@ export class PersonService {
   }
 
   getPeopleByIsInfected(isInfected: boolean): Observable<Person[]>{
-    return  of(PEOPLE.filter(person => person.is_infected === isInfected));
+    return  of(PEOPLE.filter(person => person.is_infected === isInfected && person.is_died === false));
   }
   getPeopleByIsRecovered(isRecovered: boolean): Observable<Person[]>{
     return  of(PEOPLE.filter(person => person.is_recovered === isRecovered));

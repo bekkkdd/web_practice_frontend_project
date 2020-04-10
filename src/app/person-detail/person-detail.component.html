@@ -33,7 +33,7 @@
       <label for="infectorId">Choose an infector:</label>
       <select id="infectorId" name="infectorId" formControlName="infectorId">
         <option value="" disabled selected>Choose infector</option>
-        <option *ngFor="let infector of infectedPeople" value="{{infector.id}}"> {{infector.name}} </option>
+        <option *ngFor="let infector of infectedPeople"  value="{{infector.id}}"> {{infector.name}} </option>
       </select>
 
     </div>

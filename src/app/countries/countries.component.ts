@@ -10,7 +10,7 @@ import {Location} from '@angular/common';
 })
 export class CountriesComponent implements OnInit {
 
-  constructor(private countryService: CountryService,private location: Location) { }
+  constructor(private countryService: CountryService, private location: Location) { }
 
   countries: Country[];
 
