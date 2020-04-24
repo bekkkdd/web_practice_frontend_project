@@ -10,6 +10,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CountriesComponent } from './countries/countries.component';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { LoginComponent } from './login/login.component';
+import { RegionsComponent } from './regions/regions.component';
+import { RegionDetailComponent } from './region-detail/region-detail.component';
+import { CitiesComponent } from './cities/cities.component';
+import { CitiesDetailComponent } from './cities-detail/cities-detail.component';
+import { MessegesComponent } from './messeges/messeges.component';
+import { CityDetailComponent } from './city-detail/city-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,13 @@ import { LoginComponent } from './login/login.component';
     DashboardComponent,
     CountriesComponent,
     CountryDetailComponent,
-    LoginComponent
+    LoginComponent,
+    RegionsComponent,
+    RegionDetailComponent,
+    CitiesComponent,
+    CitiesDetailComponent,
+    MessegesComponent,
+    CityDetailComponent
   ],
   imports: [
     BrowserModule,
