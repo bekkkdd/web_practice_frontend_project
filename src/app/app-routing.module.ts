@@ -6,9 +6,20 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {PersonDetailComponent} from './person-detail/person-detail.component';
 import {CountryDetailComponent} from './country-detail/country-detail.component';
 import {CountriesComponent} from './countries/countries.component';
-import {LoginComponent} from './login/login.component'
+import {LoginComponent} from './login/login.component';
+import {RegionsComponent} from './regions/regions.component';
+import {RegionDetailsComponent} from './region-detail/region-detail.component';
+import {CitiesComponent} from './cities/cities.component';
+import {CityDetailComponent} from './city-detail/city-detail.component';
+
+
 const routes: Routes = [
-  {path: 'people', component: PeopleComponent},
+  { path: 'people', component: PeopleComponent},
+  { path: 'regions' , component : RegionsComponent},
+  { path: 'regions/:region_id',component : RegionDetailsComponent},
+  { path: 'cities' , component: CitiesComponent},
+  { path: 'cities/:city_id' , component : CityDetailComponent},
+  { path: 'regions/:region_id/cities' , component: CitiesComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'countries', component: CountriesComponent },
