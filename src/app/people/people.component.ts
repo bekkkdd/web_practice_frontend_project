@@ -23,11 +23,30 @@ export class PeopleComponent implements OnInit {
 
   ngOnInit(): void {
     const countryId = +this.route.snapshot.paramMap.get('country_id');
-    if (countryId === 0){
-      this.getPeople();
-    }else {
+    const regionId = +this.route.snapshot.paramMap.get('region_id');
+    const cityId = +this.route.snapshot.paramMap.get('city_id');
+    if (cityId != null ){
+      this.getPeopleByCityId();
+    }
+    else if (regionId != null){
+      this.getPeopleByRegionId();
+    }
+    else if(countryId != null){
       this.getPeopleByCountryId();
     }
+    else{
+      this.getPeople();
+    }
+    // if (regionId === 0){
+    //   this.getPeople();
+    // }else{
+    //   this.getPeopleByRegionId();
+    // }
+    // if (cityId === 0){
+    //   this.getPeople();
+    // }else{
+    //   this.getPeopleByCityId();
+    // }
   }
 
   getPeople(): void {
@@ -37,6 +56,14 @@ export class PeopleComponent implements OnInit {
   getPeopleByCountryId(){
     const countryId = +this.route.snapshot.paramMap.get('country_id');
     this.personService.getPeopleByCountryId(countryId).subscribe(people => this.people = people);
+  }
+  getPeopleByRegionId(){
+    const regionId = +this.route.snapshot.paramMap.get('region_id');
+    this.personService.getPeopleByRegionId(regionId).subscribe(people => this.people = people);
+  }
+  getPeopleByCityId(){
+    const cityId = +this.route.snapshot.paramMap.get('city_id');
+    this.personService.getPeopleByCityId(cityId).subscribe(people => this.people = people);
   }
 
   goBack(): void{

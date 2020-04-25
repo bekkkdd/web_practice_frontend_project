@@ -1,1 +1,18 @@
-<p>cities works!</p>
+<div class="clsdivCountry">
+  <div class="cntcls">
+  <h2>Cities</h2>
+</div>
+<div class="ulcls">
+  <ul class="people">
+    <li *ngFor="let city of cities">
+    <a routerLink="/cities/{{city.id}}">
+      <span class="badge">{{city.id}}</span> {{city.name}}
+    </a>
+    </li>
+  </ul>
+</div>
+<div class="clsOfbtn">
+  <button (click)="goBack()" class="goBackbuttonclass">go back</button>
+  </div>
+</div>
+

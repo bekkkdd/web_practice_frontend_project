@@ -7,13 +7,19 @@ import {PersonDetailComponent} from './person-detail/person-detail.component';
 import {CountryDetailComponent} from './country-detail/country-detail.component';
 import {CountriesComponent} from './countries/countries.component';
 import {RegionsComponent} from './regions/regions.component';
+import {RegionDetailComponent} from "./region-detail/region-detail.component";
+import {CitiesComponent} from "./cities/cities.component";
+import {CityDetailComponent} from "./city-detail/city-detail.component";
 // import {LoginComponent} from './login/login.component'
 const routes: Routes = [
   {path: 'people', component: PeopleComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
   { path: 'countries', component: CountriesComponent },
+  { path: 'cities', component: CitiesComponent },
+  { path: 'cities/:city_id', component: CityDetailComponent },
   { path: 'regions', component: RegionsComponent },
+  { path: 'regions/:region_id', component: RegionDetailComponent },
   { path: 'countries/:country_id', component: CountryDetailComponent },
   { path: 'countries/:country_id/people', component: PeopleComponent },
   { path: 'people/:person_id', component: PersonDetailComponent },

@@ -1,1 +1,21 @@
-<p>region-detail works!</p>
+<div *ngIf="region" class="countcls">
+
+  <h2>{{region.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{region.id}}</div>
+  <div><span>Country id: </span>{{region.country_id}}</div>
+  <div><span>Name: </span>{{region.name}}</div>
+  <div><span>Infected count: </span>{{region.infected_count}}</div>
+  <div><span>Recovered count: </span>{{region.recovered_count}}</div>
+  <div><span>Died count: </span>{{region.died_count}}</div>
+
+  <div>
+    <label>name:
+      <input [(ngModel)]="region.name" placeholder="name"/>
+    </label>
+  </div>
+
+
+  <br><a routerLink="people">People</a> <br> <br>
+  <br><a routerLink="cities">City</a> <br> <br>
+  <button (click)="goBack()" class="gbkcls">go back</button>
+</div>

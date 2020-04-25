@@ -1,1 +1,15 @@
-<p>regions works!</p>
+<div class="mypeoplecls">
+<h2>All Regions</h2>
+</div>
+<div class="div_cls_people_comp">
+  <ul class="people">
+  <li *ngFor="let region of regions">
+    <a routerLink="/regions/{{region.id}}">
+      <span class="badge">{{region.id}}</span> {{region.name}}
+    </a>
+  </li>
+</ul>
+</div>
+<div class="clsOfbtn">
+<button (click)="goBack()" class="goBackbuttonclass">go back</button>
+</div>

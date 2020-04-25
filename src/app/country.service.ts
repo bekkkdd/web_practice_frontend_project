@@ -33,62 +33,6 @@ export class CountryService {
     return this.http.delete(`${this.BASE_URL}/api/countries/${id}/`);
   }
 
-  getRegionList(): Observable<Region[]> {
-    return this.http.get<Region[]>(`${this.BASE_URL}/api/regions/`);
-  }
-
-  getRegionsOfCountryList(id: number): Observable<Region[]> {
-    return this.http.get<Region[]>(`${this.BASE_URL}/api/countries/${id}/regions/`);
-  }
-
-  getRegionById(id: number): Observable<Region> {
-    return this.http.get<Region>(`${this.BASE_URL}/api/regions/${id}`);
-  }
-
-  deleteCompany(id: number): Observable<any> {
-    return this.http.delete(`${this.BASE_URL}/api/regions/${id}/`);
-  }
-
-  getCitiesOfRegionsList(id: number): Observable<City[]> {
-    return this.http.get<City[]>(`${this.BASE_URL}/api/regions/${id}/cities/`);
-  }
-
-  getCitiesList(): Observable<City[]> {
-    return this.http.get<City[]>(`${this.BASE_URL}/api/cities/`);
-  }
-
-  getCityById(id: number): Observable<City> {
-    return this.http.get<City>(`${this.BASE_URL}/api/cities/${id}/`);
-  }
-
-  deleteCity(id: number): Observable<any> {
-    return this.http.delete(`${this.BASE_URL}/api/cities/${id}/`);
-  }
-
-  getCountryCitiesList(id: number): Observable<City[]> {
-    return this.http.get<City[]>(`${this.BASE_URL}/api/countries/${id}/cities/`);
-  }
-
-  getCountryPeople(id: number): Observable<Person[]> {
-    return this.http.get<Person[]>(`${this.BASE_URL}/api/countries/${id}/people/`);
-  }
-
-  getRegionPeople(id: number): Observable<Person[]> {
-    return this.http.get<Person[]>(`${this.BASE_URL}/api/regions/${id}/people/`);
-  }
-
-  getCityPeopleList(id: number): Observable<Person[]> {
-    return this.http.get<Person[]>(`${this.BASE_URL}/api/cities/${id}/people/`);
-  }
-
-  getCompanyList(): Observable<City[]> {
-    return this.http.get<City[]>(`${this.BASE_URL}/api/cities/`);
-  }
-
-  getCity(id: number): Observable<City> {
-    return this.http.get<City>(`${this.BASE_URL}/api/cities/${id}/`);
-  }
-
   // deleteCompany(id: number): Observable<any> {
   //   return this.http.delete(`${this.BASE_URL}/api/cities/${id}/`);
   // }

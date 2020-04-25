@@ -1,4 +1,5 @@
 export interface City{
+    id : number;
     country_id: number;
     region_id: number;
     name: string;
