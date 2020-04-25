@@ -1,4 +1,6 @@
-<div class="header">
+<div class="wrapper" *ngIf="logged">
+
+  <div class="header">
     <div class="aptitleclass">
       <h1>{{title}}</h1>
     </div>
@@ -6,10 +8,27 @@
       <a routerLink="/people" class="a1">People</a>
       <a routerLink="/countries" class="a2">Countries</a>
       <a routerLink="/dashboard" class="a1">Recovered</a>
-      <a routerLink="/login" class="a3 a4">Login</a>
+      <button (click)="logout()">Logout</button>
 
     </nav>
 
+  </div>
+  <router-outlet></router-outlet>
+  <!--<app-people></app-people>-->
 </div>
-<router-outlet></router-outlet>
-<!--<app-people></app-people>-->
+
+<div *ngIf="!logged">
+  <h1>Login</h1>
+
+
+  <div class="all">
+    <div class="log">
+      <p>Username: <input type="text" [(ngModel)]="username"></p>
+      <p>Password: <input type="text" [(ngModel)]="password"></p>
+    </div>
+    <div class="ara">
+      <button (click)="login()">Login</button>
+    </div>
+  </div>
+</div>
+
