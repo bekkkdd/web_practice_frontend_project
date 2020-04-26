@@ -73,6 +73,8 @@ export class PersonDetailComponent implements OnInit {
     this.person = await this.personService.editPersonByID(this.person).toPromise();
     console.log(this.person);
     this.country = await this.countryService.incrementInfected(this.country).toPromise();
+    this.region = await this.regionService.incrementInfected(this.region).toPromise();
+    this.city = await this.cityService.incrementInfected(this.city).toPromise();
   }
 
   goBack(): void {
@@ -84,6 +86,8 @@ export class PersonDetailComponent implements OnInit {
     this.person.is_infected = false;
     this.person = await this.personService.editPersonByID(this.person).toPromise();
     this.country = await this.countryService.incrementRecovered(this.country).toPromise();
+    this.region = await this.regionService.incrementRecovered(this.region).toPromise();
+    this.city = await this.cityService.incrementRecovered(this.city).toPromise();
   }
 
   async kill(): Promise<void> {
@@ -93,6 +97,8 @@ export class PersonDetailComponent implements OnInit {
 
     this.person = await this.personService.editPersonByID(this.person).toPromise();
     this.country = await this.countryService.incrementDied(this.country).toPromise();
+    this.region = await this.regionService.incrementDied(this.region).toPromise();
+    this.city = await this.cityService.incrementDied(this.city).toPromise();
   }
 
 }

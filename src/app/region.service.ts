@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Person} from './person';
 import {COUNTRIES} from './mock-countries';
 import {Country} from './country';
@@ -32,4 +32,22 @@ export class RegionService {
   deleteRegion(id: number): Observable<any> {
     return this.http.delete(`${this.BASE_URL}/api/regions/${id}/`);
   }
+  incrementDied(region: Region): Observable<Region> {
+    const httpOptions = {     headers: new HttpHeaders({'Content-Type': 'application/json'})   };
+    region.died_count++;
+    region.infected_count--;
+    return this.http.put<Region>(`${this.BASE_URL}/api/regions/${region.id}/`, region, httpOptions);
+  }
+  incrementRecovered(region: Region): Observable<Region> {
+    const httpOptions = {     headers: new HttpHeaders({'Content-Type': 'application/json'})   };
+    region.recovered_count++;
+    region.infected_count--;
+    return this.http.put<Region>(`${this.BASE_URL}/api/regions/${region.id}/`, region, httpOptions);
+  }
+  incrementInfected(region:Region): Observable<Region> {
+    const httpOptions = {     headers: new HttpHeaders({'Content-Type': 'application/json'})   };
+    region.infected_count++;
+    return this.http.put<Region>(`${this.BASE_URL}/api/regions/${region.id}/`, region, httpOptions);
+  }
+
 }

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Person} from './person';
 import {COUNTRIES} from './mock-countries';
 import {Country} from './country';
@@ -37,6 +37,23 @@ export class CityService {
 
   getPeopleByCountryId(id: number): Observable<City[]> {
     return this.http.get<City[]>(`${this.BASE_URL}/api/countries/${id}/cities/`);
+  }
+  incrementDied(city: City): Observable<City> {
+    const httpOptions = {     headers: new HttpHeaders({'Content-Type': 'application/json'})   };
+    city.died_count++;
+    city.infected_count--;
+    return this.http.put<City>(`${this.BASE_URL}/api/cities/${city.id}/`, city, httpOptions);
+  }
+  incrementRecovered(city: City): Observable<City> {
+    const httpOptions = {     headers: new HttpHeaders({'Content-Type': 'application/json'})   };
+    city.recovered_count++;
+    city.infected_count--;
+    return this.http.put<City>(`${this.BASE_URL}/api/cities/${city.id}/`, city, httpOptions);
+  }
+  incrementInfected(city:City): Observable<City> {
+    const httpOptions = {     headers: new HttpHeaders({'Content-Type': 'application/json'})   };
+    city.infected_count++;
+    return this.http.put<City>(`${this.BASE_URL}/api/cities/${city.id}/`, city, httpOptions);
   }
 
 }

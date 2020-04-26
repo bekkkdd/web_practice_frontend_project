@@ -51,7 +51,6 @@ export class PeopleComponent implements OnInit {
     const cityId = +this.route.snapshot.paramMap.get('city_id');
     this.personService.getPeopleByCityId(cityId).subscribe(people => this.people = people);
   }
-
   goBack(): void{
     this.location.back();
   }

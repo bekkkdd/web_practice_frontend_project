@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   }
 
   getPeople(): void {
-    this.personService.getPeopleByIsRecovered(true)
+    this.personService.getPeople()
       .subscribe(people => {
         return this.people = people.sort((a, b) => {
           return (new Date(a.infected_date).getTime() - new Date(b.infected_date).getTime());
