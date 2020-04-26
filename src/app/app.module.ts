@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { PeopleComponent } from './people/people.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -12,10 +11,12 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
 import { RegionsComponent } from './regions/regions.component';
 import { RegionDetailComponent } from './region-detail/region-detail.component';
 import { CitiesComponent } from './cities/cities.component';
-import { MessegesComponent } from './messeges/messeges.component';
 import { CityDetailComponent } from './city-detail/city-detail.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './auth.interceptor';
+import { MessagesComponent } from './messages/messages.component';
+import {CommonModule} from '@angular/common'
+
 
 @NgModule({
   declarations: [
@@ -28,15 +29,16 @@ import {AuthInterceptor} from './auth.interceptor';
     RegionsComponent,
     RegionDetailComponent,
     CitiesComponent,
-    MessegesComponent,
-    CityDetailComponent
+    CityDetailComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [
     {

@@ -1,0 +1,5 @@
+<div *ngfor = "let message of messages">
+  <span>{{message.id}}</span>
+  <span>{{message.message}}</span>
+</div>
+<button (click)="goBack()" >go Back</button>
