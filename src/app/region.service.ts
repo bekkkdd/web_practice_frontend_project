@@ -21,6 +21,11 @@ export class RegionService {
     return this.http.get<Region[]>(`${this.BASE_URL}/api/regions/`);
   }
 
+  addRegion(name: string, country_id: number): Observable<Region> {
+    const body = {name: name, infected_count: 0, recovered_count: 0, died_count: 0, country_id: country_id};
+    return this.http.post<Region>(`${this.BASE_URL}/api/regions/`, body);
+  }
+
   getRegionsByCountryId (id: number): Observable<Region[]> {
     return this.http.get<Region[]>(`${this.BASE_URL}/api/countries/${id}/regions/`);
   }

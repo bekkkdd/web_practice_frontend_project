@@ -41,4 +41,15 @@ export class PersonService {
     return this.http.put<Person>(`${this.BASE_URL}/api/people/${personObj.id}/`, personObj, httpOptions);
   }
 
+  deletePerson(id: number): Observable<any> {
+    return this.http.delete(`${this.BASE_URL}/api/people/${id}/`);
+  }
+
+
+  addPerson(name: string, surname: string, country_id: number, region_id: number, city_id: number): Observable<Person> {
+    const body = {name: name, surname: surname, is_infected: false, if_recovered: 0, is_died: 0, country_id: country_id, region_id: region_id, city_id: city_id, infected_date: "", infected_by_id: null,};
+    console.log(body);
+    return this.http.post<Person>(`${this.BASE_URL}/api/people/`, body);
+  }
+
 }

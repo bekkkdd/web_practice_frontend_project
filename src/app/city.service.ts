@@ -35,6 +35,12 @@ export class CityService {
     return this.http.delete(`${this.BASE_URL}/api/cities/${id}/`);
   }
 
+  addCity(name: string, country_id: number, region_id: number): Observable<City> {
+    const body = {name: name, infected_count: 0, recovered_count: 0, died_count: 0, country_id: country_id, region_id: region_id};
+    console.log(body);
+    return this.http.post<City>(`${this.BASE_URL}/api/cities/`, body);
+  }
+
   getPeopleByCountryId(id: number): Observable<City[]> {
     return this.http.get<City[]>(`${this.BASE_URL}/api/countries/${id}/cities/`);
   }

@@ -7,9 +7,25 @@
     <a routerLink="/regions/{{region.id}}">
       <span class="badge">{{region.id}}</span> {{region.name}}
     </a>
+    <button (click)="delete(region.id)"> Delete </button>
   </li>
 </ul>
 </div>
 <div class="clsOfbtn">
 <button (click)="goBack()" class="goBackbuttonclass">go back</button>
+</div>
+
+<div>
+  <form [formGroup]="checkoutForm"
+        (ngSubmit)="onCreate(checkoutForm.value)">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" formControlName="name">
+      <select id="country_id" name="country_id" formControlName="country_id">
+        <option style="color: #607d8b" value="" disabled selected>Choose Country</option>
+        <option style="color: #000000;" *ngFor="let country of countries"  value="{{country.id}}"> {{country.name}} </option>
+      </select>
+    </div>
+    <button class="button" type="submit">Create</button>
+  </form>
 </div>

@@ -8,6 +8,7 @@
     <a routerLink="/countries/{{country.id}}">
       <span class="badge">{{country.id}}</span> {{country.name}}
     </a>
+      <button (click)="delete(country.id)"> Delete </button>
     </li>
   </ul>
 </div>
@@ -15,4 +16,19 @@
   <button (click)="goBack()" class="goBackbuttonclass">go back</button>
   </div>
 </div>
+<div>
 
+  <form [formGroup]="checkoutForm"
+        (ngSubmit)="onCreate(checkoutForm.value)">
+    <div>
+      <label for="name">Name:</label>
+<!--      <select id="infectorId" name="infectorId" formControlName="infectorId">-->
+<!--        <option value="" disabled selected>Choose infector</option>-->
+<!--        <option *ngFor="let infector of infectedPeople"  value="{{infector.id}}"> {{infector.name}} </option>-->
+<!--      </select>-->
+      <input type="text" id="name" formControlName="name" name="name" placeholder="New name for your country">
+    </div>
+    <button class="button" type="submit">Create</button>
+  </form>
+
+</div>

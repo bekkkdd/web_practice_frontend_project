@@ -20,6 +20,11 @@ export class CountryService {
   constructor(private http: HttpClient) {
   }
 
+  addCountry(name: string): Observable<Country> {
+    const body = {name: name, infected_count: 0, recovered_count: 0, died_count: 0};
+    return this.http.post<Country>(`${this.BASE_URL}/api/countries/`, body);
+  }
+
   getCountries(): Observable<Country[]> {
     return this.http.get<Country[]>(`${this.BASE_URL}/api/countries/`);
   }
@@ -33,23 +38,24 @@ export class CountryService {
   }
 
   incrementDied(country: Country): Observable<Country> {
-    const httpOptions = {     headers: new HttpHeaders({'Content-Type': 'application/json'})   };
+    const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
     country.died_count++;
     country.infected_count--;
     return this.http.put<Country>(`${this.BASE_URL}/api/countries/${country.id}/`, country, httpOptions);
   }
+
   incrementRecovered(country: Country): Observable<Country> {
-    const httpOptions = {     headers: new HttpHeaders({'Content-Type': 'application/json'})   };
+    const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
     country.recovered_count++;
     country.infected_count--;
     return this.http.put<Country>(`${this.BASE_URL}/api/countries/${country.id}/`, country, httpOptions);
   }
+
   incrementInfected(country: Country): Observable<Country> {
-    const httpOptions = {     headers: new HttpHeaders({'Content-Type': 'application/json'})   };
+    const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
     country.infected_count++;
     return this.http.put<Country>(`${this.BASE_URL}/api/countries/${country.id}/`, country, httpOptions);
   }
-
 
 
   // deleteCompany(id: number): Observable<any> {
