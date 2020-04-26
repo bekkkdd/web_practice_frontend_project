@@ -2,21 +2,7 @@
   <div class="cntcls">
   <h2>Countries</h2>
 </div>
-<div class="ulcls">
-  <ul class="people">
-    <li *ngFor="let country of countries">
-    <a routerLink="/countries/{{country.id}}">
-      <span class="badge">{{country.id}}</span> {{country.name}}
-    </a>
-      <button (click)="delete(country.id)"> Delete </button>
-    </li>
-  </ul>
-</div>
-<div class="clsOfbtn">
-  <button (click)="goBack()" class="goBackbuttonclass">go back</button>
-  </div>
-</div>
-<div>
+<div style="text-align: center">
 
   <form [formGroup]="checkoutForm"
         (ngSubmit)="onCreate(checkoutForm.value)">
@@ -31,4 +17,18 @@
     <button class="button" type="submit">Create</button>
   </form>
 
+</div>
+<div class="ulcls">
+  <ul class="people">
+    <li *ngFor="let country of countries">
+    <a routerLink="/countries/{{country.id}}">
+      <span class="badge">{{country.id}}</span> {{country.name}}
+    </a>
+      <button (click)="delete(country.id)"> Delete </button>
+    </li>
+  </ul>
+</div>
+<div class="clsOfbtn">
+  <button (click)="goBack()" class="goBackbuttonclass">go back</button>
+  </div>
 </div>

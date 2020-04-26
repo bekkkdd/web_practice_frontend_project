@@ -1,6 +1,22 @@
 <div class="mypeoplecls">
 <h2>My People</h2>
 </div>
+<div style="text-align: center"><form [formGroup]="checkoutForm"
+           (ngSubmit)="onCreate(checkoutForm.value)">
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" formControlName="name">
+    <label for="name">Surname:</label>
+    <input type="text" id="surname" name="surname" formControlName="surname">
+    <label>City</label>
+    <select id="city_id" name="city_id" formControlName="city_id" style="background-color: #bbbbbc" placeholder="City">
+      <option style="color: #607d8b" value="" disabled selected>Choose City</option>
+      <option style="color: #000000;" *ngFor="let city of cities"  value="{{city.id}}"> {{city.name}} </option>
+    </select>
+  </div>
+  <button class="createbuttonclass" type="submit">Create</button>
+</form></div>
+
 <div class="div_cls_people_comp">
   <ul class="people">
   <li *ngFor="let person of people">
@@ -15,17 +31,3 @@
 <button (click)="goBack()" class="goBackbuttonclass">go back</button>
 </div>
 
-<div><form [formGroup]="checkoutForm"
-           (ngSubmit)="onCreate(checkoutForm.value)">
-  <div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" formControlName="name">
-    <label for="name">Surname:</label>
-    <input type="text" id="surname" name="surname" formControlName="surname">
-    <select id="city_id" name="city_id" formControlName="city_id">
-      <option style="color: #607d8b" value="" disabled selected>Choose City</option>
-      <option style="color: #000000;" *ngFor="let city of cities"  value="{{city.id}}"> {{city.name}} </option>
-    </select>
-  </div>
-  <button class="button" type="submit">Create</button>
-</form></div>
