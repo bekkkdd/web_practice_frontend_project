@@ -10,6 +10,7 @@ import {RegionsComponent} from './regions/regions.component';
 import {RegionDetailComponent} from "./region-detail/region-detail.component";
 import {CitiesComponent} from "./cities/cities.component";
 import {CityDetailComponent} from "./city-detail/city-detail.component";
+import {MessagesComponent} from "./messages/messages.component"
 // import {LoginComponent} from './login/login.component'
 const routes: Routes = [
   {path: 'people', component: PeopleComponent},
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'regions/:region_id/people', component: PeopleComponent },
   { path: 'regions/:region_id/cities', component: CitiesComponent },
   { path: 'people/:person_id', component: PersonDetailComponent },
-  // { path: 'login', component:LoginComponent}region_idcity_id
+  { path: 'message',component: MessagesComponent}
+  // { path: 'login', component:LoginComponent}
 ];
 
 @NgModule({
