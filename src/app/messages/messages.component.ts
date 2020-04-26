@@ -18,8 +18,9 @@ export class MessagesComponent implements OnInit {
   ngOnInit(): void {
     this.getMessages();
   }
-  getMessages():void {
-    this.messageService.getMessages().subscribe(messages => this.messages = messages);
+  async getMessages():Promise<void>{
+    this.messages = await this.messageService.getMessages().toPromise();
+    console.log(this.messages);
   }
   goBack(): void{
     this.location.back();

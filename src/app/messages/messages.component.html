@@ -1,5 +1,7 @@
-<div *ngfor = "let message of messages">
-  <span>{{message.id}}</span>
-  <span>{{message.message}}</span>
-</div>
+<div class="classOfmessages">
+  <div *ngFor = "let message of messages" class="classOfmessages">
+  <span  style="color: #000000">{{message.id}}.</span>
+  <span  style="color: #000000">{{message.message}}</span>
+  </div>
+  </div>
 <button (click)="goBack()" >go Back</button>

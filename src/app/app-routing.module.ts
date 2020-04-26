@@ -29,8 +29,8 @@ const routes: Routes = [
   { path: 'regions/:region_id/people', component: PeopleComponent },
   { path: 'regions/:region_id/cities', component: CitiesComponent },
   { path: 'people/:person_id', component: PersonDetailComponent },
-  { path: 'messages',component: MessagesComponent}
-  // { path: 'login', component:LoginComponent}region_idcity_id
+  { path: 'message',component: MessagesComponent}
+  // { path: 'login', component:LoginComponent}
 ];
 
 @NgModule({

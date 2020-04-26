@@ -13,7 +13,7 @@ export class MessagesService {
   BASE_URL = 'http://127.0.0.1:8000';
 
   getMessages(): Observable<Message[]>{
-  return this.http.get<Message[]>(`${this.BASE_URL}/api/messages/`);
+  return this.http.get<Message[]>(`${this.BASE_URL}/api/message/`);
   }
 
 }
