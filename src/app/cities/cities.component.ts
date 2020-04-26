@@ -18,10 +18,10 @@ export class CitiesComponent implements OnInit {
   ngOnInit(): void {
     const countryId = +this.route.snapshot.paramMap.get('country_id');
     const regionId = +this.route.snapshot.paramMap.get('region_id');
-    if(regionId != null){
+    if(regionId != 0){
         this.getCitiesByRegionId();
     }
-    else if(countryId != null){
+    else if(countryId != 0){
       this.getCitiesByCountryId();
     }
     else {

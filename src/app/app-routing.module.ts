@@ -18,12 +18,17 @@ const routes: Routes = [
   { path: 'countries', component: CountriesComponent },
   { path: 'cities', component: CitiesComponent },
   { path: 'cities/:city_id', component: CityDetailComponent },
+  { path: 'cities/:city_id/people', component: PeopleComponent },
   { path: 'regions', component: RegionsComponent },
   { path: 'regions/:region_id', component: RegionDetailComponent },
   { path: 'countries/:country_id', component: CountryDetailComponent },
   { path: 'countries/:country_id/people', component: PeopleComponent },
+  { path: 'countries/:country_id/cities', component: CitiesComponent },
+  { path: 'countries/:country_id/regions', component: RegionsComponent },
+  { path: 'regions/:region_id/people', component: PeopleComponent },
+  { path: 'regions/:region_id/cities', component: CitiesComponent },
   { path: 'people/:person_id', component: PersonDetailComponent },
-  // { path: 'login', component:LoginComponent}
+  // { path: 'login', component:LoginComponent}region_idcity_id
 ];
 
 @NgModule({

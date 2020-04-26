@@ -25,28 +25,15 @@ export class PeopleComponent implements OnInit {
     const countryId = +this.route.snapshot.paramMap.get('country_id');
     const regionId = +this.route.snapshot.paramMap.get('region_id');
     const cityId = +this.route.snapshot.paramMap.get('city_id');
-    if (cityId != null ){
+    if (cityId != 0){
       this.getPeopleByCityId();
-    }
-    else if (regionId != null){
+    }else if (regionId != 0){
       this.getPeopleByRegionId();
-    }
-    else if(countryId != null){
+    }else if(countryId != 0){
       this.getPeopleByCountryId();
-    }
-    else{
+    }else{
       this.getPeople();
     }
-    // if (regionId === 0){
-    //   this.getPeople();
-    // }else{
-    //   this.getPeopleByRegionId();
-    // }
-    // if (cityId === 0){
-    //   this.getPeople();
-    // }else{
-    //   this.getPeopleByCityId();
-    // }
   }
 
   getPeople(): void {
