@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {Observable, of} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {Person} from './person';
-import {PEOPLE} from './mock-people';
 import {COUNTRIES} from './mock-countries';
 import {Country} from './country';
 import {City} from './city';

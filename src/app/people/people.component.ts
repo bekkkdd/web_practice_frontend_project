@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {Person} from '../person';
-import {PEOPLE} from '../mock-people';
 import {PersonService} from '../person.service';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
